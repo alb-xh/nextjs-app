@@ -1,13 +1,11 @@
-import styles from '../styles/Nav.module.css';
-
 import Link from 'next/link';
 
 type Props = {
   links: [string, string][],
 };
 
-const Nav = ({ links}: Props) => (
-  <div className={styles.nav}>
+const Nav = ({ links }: Props) => (
+  <header>
     {
       links.map(([ text, href ], i) => (
         <Link
@@ -18,7 +16,7 @@ const Nav = ({ links}: Props) => (
         </Link>
       ))
     }
-  </div>
+  </header>
 );
 
 export default Nav;
