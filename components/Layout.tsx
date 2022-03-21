@@ -36,8 +36,9 @@ const Layout = ({
       />
       <Nav links={links} />
     </header>
-
-    {children}
+    <main>
+      {children}
+    </main>
     <footer>
       {
         email &&
