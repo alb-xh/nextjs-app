@@ -15,18 +15,42 @@ a {
   box-sizing: border-box;
 }
 
-header, footer {
+header {
   display: flex;
+  justify-content: left;
+  width: 100%;
   background-color: #1a1a1a;
 }
 
-header a {
+nav {
   display: flex;
-  color: white;
-  padding: 15px 30px 15px 30px;
-  font-size: larger;
 }
 
-header a:hover {
+nav * {
+  padding: 15px 30px 15px 30px;
+  font-size: larger;
+  color: white;
+}
+
+nav *:hover {
   background-color: #036622;
+}
+
+footer {
+  display: flex;
+  position: fixed;
+  justify-content: flex-end;
+  width: 100%;
+  bottom: 0%;
+  background-color: #1a1a1a;
+}
+
+footer * {
+  display: flex;
+  color: white;
+  padding: 10px 30px 10px 30px;
+}
+
+.mailTo:hover {
+  color: #4b72ff
 }

@@ -5,7 +5,7 @@ type Props = {
 };
 
 const Nav = ({ links }: Props) => (
-  <header>
+  <nav>
     {
       links.map(([ text, href ], i) => (
         <Link
@@ -16,7 +16,7 @@ const Nav = ({ links }: Props) => (
         </Link>
       ))
     }
-  </header>
+  </nav>
 );
 
 export default Nav;

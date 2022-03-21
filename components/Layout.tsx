@@ -1,23 +1,44 @@
 import type { ReactNode } from 'react';
+
 import Meta from './Meta';
 import Nav from './Nav';
+import MailTo from './MailTo';
 
-type Props = { children?: ReactNode };
-
-const Layout = ({ children }: Props) => (
+type Props = {
+  title: string,
+  description?: string,
+  keywords?: string[],
+  links: [string, string][],
+  email?: string,
+  children?: ReactNode,
+}
+const Layout = ({
+  title,
+  description,
+  keywords,
+  links,
+  email,
+  children,
+}: Props) => (
   <>
     <Meta
-      title='My Blog'
-      description='My NextJs blog app'
-      keywords='NextJs, blog, app'
+      title={title}
+      description={description || ''}
+      keywords={keywords?.join(',') || ''}
     />
-    <Nav
-      links={[
-        ['Home', '/'],
-        ['About', '/about']
-      ]}
-    />
+    <header>
+      <Nav links={links} />
+    </header>
+
     {children}
+    <footer>
+      {
+        email &&
+        <MailTo email={email}>
+          Contact me
+        </MailTo>
+      }
+    </footer>
   </>
 );
 
