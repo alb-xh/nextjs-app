@@ -1,4 +1,5 @@
 import type { ReactNode } from 'react';
+import Image from 'next/image';
 
 import Meta from './Meta';
 import Nav from './Nav';
@@ -27,6 +28,12 @@ const Layout = ({
       keywords={keywords?.join(',') || ''}
     />
     <header>
+      <Image
+        src='/favicon.ico'
+        alt='logo'
+        width={48}
+        height={48}
+      />
       <Nav links={links} />
     </header>
 
