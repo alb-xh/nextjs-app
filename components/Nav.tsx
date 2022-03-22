@@ -1,19 +1,31 @@
 import Link from 'next/link';
 
 type Props = {
-  links: [string, string][],
+  links: {
+    text: string,
+    href: string,
+    className?: string,
+  }[],
 };
 
 const Nav = ({ links }: Props) => (
   <nav>
     {
-      links.map(([ text, href ], i) => (
-        <Link
+      links.map(({
+        text,
+        href,
+        className,
+      }, i) => (
+        <div
           key={i}
-          href={href}
+          className={`nav-item ${className}`}
         >
-          <a>{text}</a>
-        </Link>
+          <Link
+            href={href}
+          >
+            <a>{text}</a>
+          </Link>
+        </div>
       ))
     }
   </nav>

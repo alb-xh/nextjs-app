@@ -13,8 +13,19 @@ const App = ({ Component, pageProps }: AppProps) => (
       'app',
     ]}
     links={[
-      ['Home', '/'],
-      ['About', '/about']
+      {
+        text: 'Home',
+        href: '/',
+      },
+      {
+        text: 'About',
+        href: '/about',
+      },
+      {
+        text: 'Login',
+        href: '/login',
+        className: 'nav-item-right'
+      },
     ]}
     email='albano.xhafaj10@gmail.com'
   >

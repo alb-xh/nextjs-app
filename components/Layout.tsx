@@ -9,7 +9,11 @@ type Props = {
   title: string,
   description?: string,
   keywords?: string[],
-  links: [string, string][],
+  links: {
+    text: string,
+    href: string,
+    className?: string,
+  }[],
   email?: string,
   children?: ReactNode,
 }
