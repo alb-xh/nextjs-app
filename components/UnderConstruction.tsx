@@ -1,14 +1,13 @@
-import Image from 'next/image';
+import Image from './Image'
 
 const UnderConstruction = () => (
-  <div className='under-construction'>
-    <Image
-      src='/images/under-construction.png'
-      alt='under construction image'
-      width={284}
-      height={300}
-    />
-  </div>
+  <Image
+    className='under-construction'
+    src='/images/under-construction.png'
+    alt='under construction image'
+    width={284}
+    height={300}
+  />
 )
 
 export default UnderConstruction;

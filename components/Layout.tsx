@@ -1,6 +1,6 @@
 import type { ReactNode } from 'react';
-import Image from 'next/image';
 
+import Image from './Image';
 import Meta from './Meta';
 import Nav from './Nav';
 import MailTo from './MailTo';
@@ -33,6 +33,7 @@ const Layout = ({
     />
     <header>
       <Image
+        className='header-logo'
         src='/favicon.ico'
         alt='logo'
         width={48}

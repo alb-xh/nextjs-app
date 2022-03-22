@@ -44,6 +44,15 @@ footer * {
   padding: 10px 30px 10px 30px;
 }
 
+.image {
+  display: flex;
+  align-items: center;
+}
+
+.header-logo {
+  margin-left: 10px;
+}
+
 .nav-item {
   padding: 15px 30px 15px 30px;
   font-size: larger;
@@ -69,7 +78,6 @@ main {
 
 .under-construction {
   position: fixed;
-  display: flex;
   top: 40%;
   left: 50%;
   -webkit-transform: translate(-50%, -50%);
