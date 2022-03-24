@@ -105,13 +105,27 @@ footer * {
 .post {
   display: flex;
   flex-direction: column;
+  max-width: 700px;
   padding: 10px;
   margin: 10px;
-  border: 2px solid black;
+  border: 3px solid #585555;
   border-radius: 5px;
-  background-color: #c5d0db;
+  background-color: #e5c47c66;
 }
 
-.post * {
-  margin: 10px auto 10px auto;
+.post > * {
+  margin: auto;
+  padding: 10px;
+}
+
+.post img {
+  border: 5px solid #8d8577 !important;
+}
+
+.post-description {
+  border: 2px solid;
+  border-radius: 5px;
+  border-style: hidden;
+  background-color: #93af9c;
+  font-weight: 500;
 }

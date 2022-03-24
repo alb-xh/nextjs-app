@@ -1,6 +1,6 @@
-import Image from './Image'
+import { Image } from './Image';
 
-const UnderConstruction = () => (
+export const UnderConstruction = () => (
   <Image
     className='under-construction'
     src='/images/under-construction.png'
@@ -8,6 +8,4 @@ const UnderConstruction = () => (
     width={284}
     height={300}
   />
-)
-
-export default UnderConstruction;
+);

@@ -1,16 +1,16 @@
 import type { ReactNode } from 'react';
 
-import Image from './Image';
-import Meta, { Props as MetaProps } from './Meta';
-import Nav, { Props as NavProps } from './Nav';
-import MailTo, { Props as MailToProps } from './MailTo';
+import { Image } from './Image';
+import { Meta, MetaProps } from './Meta';
+import { Nav, NavProps } from './Nav';
+import { MailTo, MailToProps } from './MailTo';
 
 export type Props = Pick<MetaProps, 'title'> & NavProps & MailToProps & {
   description?: string,
   keywords?: string[],
 };
 
-const Layout = ({
+export const Layout = ({
   title,
   description,
   keywords,
@@ -47,5 +47,3 @@ const Layout = ({
     </footer>
   </>
 );
-
-export default Layout;

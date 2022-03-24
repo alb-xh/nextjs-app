@@ -1,20 +1,15 @@
 import NextImage from 'next/image';
+import { Image as ImageType } from '../types';
 
-export type Props = {
+export type ImageProps = ImageType & {
   className?: string,
-  src: string,
-  alt: string,
-  width: number,
-  height: number,
 };
 
-const Image = ({
+export const Image = ({
   className,
-  ...nextProps
-}: Props) => (
+  ...image
+}: ImageProps) => (
   <div className={`image ${className}`}>
-    <NextImage {...nextProps }/>
+    <NextImage {...image }/>
   </div>
 );
-
-export default Image;

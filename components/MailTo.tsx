@@ -1,14 +1,14 @@
 import type { ReactNode } from 'react';
 
-export type Props = {
-  email: string;
-  children?: ReactNode
+export type MailToProps = {
+  email: string,
+  children?: ReactNode,
 };
 
-const MailTo = ({
+export const MailTo = ({
   email,
   children
-}: Props) => (
+}: MailToProps) => (
   <a
     className='mailTo'
     href={`mailto:${email}`}
@@ -16,5 +16,3 @@ const MailTo = ({
     {children}
   </a>
 );
-
-export default MailTo;

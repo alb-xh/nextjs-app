@@ -1,8 +1,10 @@
 import Head from 'next/head';
 
-export type Props = Record<string, string> & { title: string };
+export type MetaProps = Record<string, string> & {
+  title: string
+};
 
-const Meta = ({ title, ...meta }: Props) => (
+export const Meta = ({ title, ...meta }: MetaProps) => (
   <Head>
     <meta charSet='utf-8' />
     <meta name='viewport' content='width=device-width, initial-scale=1' />
@@ -18,5 +20,3 @@ const Meta = ({ title, ...meta }: Props) => (
     <title>{title}</title>
   </Head>
 );
-
-export default Meta;

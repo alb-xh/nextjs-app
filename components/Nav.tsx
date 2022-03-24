@@ -1,6 +1,6 @@
 import Link from 'next/link';
 
-export type Props = {
+export type NavProps = {
   links: {
     text: string,
     href: string,
@@ -8,7 +8,7 @@ export type Props = {
   }[],
 };
 
-const Nav = ({ links }: Props) => (
+export const Nav = ({ links }: NavProps) => (
   <nav>
     {
       links.map(({
@@ -30,5 +30,3 @@ const Nav = ({ links }: Props) => (
     }
   </nav>
 );
-
-export default Nav;

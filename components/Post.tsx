@@ -1,18 +1,14 @@
 /* eslint-disable jsx-a11y/alt-text */
-import Image, { Props as ImageProps } from './Image';
+import { Post as PostType } from '../types';
+import { Image } from './Image';
 
-export type Props = {
-  id: number,
-  title: string,
-  description?: string,
-  image?: ImageProps,
-};
+export type PostProps = PostType;
 
-const Post = ({
+export const Post = ({
   title,
   description,
   image,
-}: Props) => (
+}: PostType) => (
   <div className='post'>
     <h3 className='post-title'>{title}</h3>
     {
@@ -38,5 +34,3 @@ const Post = ({
     <div className='post-comments'></div>
   </div>
 );
-
-export default Post;

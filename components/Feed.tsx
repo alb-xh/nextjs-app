@@ -1,27 +1,30 @@
-import Post, { Props as PostProps } from './Post';
+import { useFetch } from '../hooks';
+import { Post as PostType } from '../types';
+import { Post } from './Post';
 
-export type Props = {
+export type FeedProps = {
   title: string,
-  posts: PostProps[],
 };
 
-const Feed = ({
+export const Feed = ({
   title,
-  posts
-}: Props) => (
-  <div className='feed'>
-    <h1 className='feed-title'>
-      {title}
-    </h1>
-    {
-      posts.map((post) => (
-        <Post
-          key={post.id}
-          {...post}
-        />
-      ))
-    }
-  </div>
-);
+}: FeedProps) => {
+  const [isLoading, posts ] = useFetch<PostType[]>('/api/posts');
+  if (isLoading || !posts) return (<></>);
 
-export default Feed;
+  return (
+    <div className='feed'>
+      <h1 className='feed-title'>
+        {title}
+      </h1>
+      {
+        posts.map((post) => (
+          <Post
+            key={post.id}
+            {...post}
+          />
+        ))
+      }
+    </div>
+  );
+}
