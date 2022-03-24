@@ -1,6 +1,6 @@
 import type { ReactNode } from 'react';
 
-type Props = {
+export type Props = {
   email: string;
   children?: ReactNode
 };

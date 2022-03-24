@@ -1,6 +1,6 @@
 import NextImage from 'next/image';
 
-type Props = {
+export type Props = {
   className?: string,
   src: string,
   alt: string,

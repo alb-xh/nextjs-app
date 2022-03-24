@@ -1,22 +1,15 @@
 import type { ReactNode } from 'react';
 
 import Image from './Image';
-import Meta from './Meta';
-import Nav from './Nav';
-import MailTo from './MailTo';
+import Meta, { Props as MetaProps } from './Meta';
+import Nav, { Props as NavProps } from './Nav';
+import MailTo, { Props as MailToProps } from './MailTo';
 
-type Props = {
-  title: string,
+export type Props = Pick<MetaProps, 'title'> & NavProps & MailToProps & {
   description?: string,
   keywords?: string[],
-  links: {
-    text: string,
-    href: string,
-    className?: string,
-  }[],
-  email?: string,
-  children?: ReactNode,
-}
+};
+
 const Layout = ({
   title,
   description,

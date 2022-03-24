@@ -1,6 +1,6 @@
 import Head from 'next/head';
 
-type Props = Record<string, string> & { title: string };
+export type Props = Record<string, string> & { title: string };
 
 const Meta = ({ title, ...meta }: Props) => (
   <Head>
