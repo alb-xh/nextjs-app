@@ -7,22 +7,32 @@ import {
 } from '../../types';
 import { Generator } from '../../utils';
 
+const TOTAL_POSTS = 75;
+const MAX_LIMIT = 25;
+
 const generatePosts = ({
   limit,
   offset,
-}: Pagination): Post[] => [ ...Array(limit) ]
-  .map(() => {
-    const noDescription = (limit + offset) % 3 === 0;
-    const noImage = (limit + offset) % 4 === 0;
+}: {
+  limit: number,
+  offset: number,
+}): Post[] => {
+  const allPosts = [ ...Array(TOTAL_POSTS) ];
+  const customLimit = limit > MAX_LIMIT ? MAX_LIMIT : limit
 
-    const post = Generator.post();
+  return allPosts.slice(offset, offset + customLimit)
+    .map(() => {
+      const noDescription = Generator.number(1, 10) > 8;
+      const noImage = Generator.number(1, 10) > 6
+      const post = Generator.post();
 
-    return {
-      ...post,
-      description: noDescription ? undefined : post.description,
-      image: noImage ? undefined : post.image,
-    };
-  })
+      return {
+        ...post,
+        description: noDescription ? undefined : post.description,
+        image: noImage ? undefined : post.image,
+      };
+    });
+}
 
 const getPostsHanler = (
   req: NextApiRequest,

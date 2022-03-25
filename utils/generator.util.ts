@@ -7,7 +7,7 @@ import {
 
 export class Generator {
   static number (min = 0, max = Infinity) {
-    return Math.floor(Math.random() * (max - min) + min);
+    return Math.round(Math.random() * (max - min) + min);
   }
 
   static image(): Image {

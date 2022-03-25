@@ -1,1 +1,1 @@
-export * from './use-fetch.hook';
+export * from './use-infinate-scrolling.hook';
