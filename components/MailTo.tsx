@@ -7,7 +7,7 @@ export type MailToProps = {
 
 export const MailTo = ({
   email,
-  children
+  children,
 }: MailToProps) => (
   <a
     className='mailTo'

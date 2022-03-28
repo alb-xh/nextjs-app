@@ -6,6 +6,3 @@ export type Post = {
   description?: string,
   image?: Image,
 };
-
-
-

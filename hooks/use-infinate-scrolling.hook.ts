@@ -1,5 +1,4 @@
 import {
-  useState,
   useCallback,
   useRef,
   Dispatch,
@@ -21,14 +20,13 @@ export const useInfinateScrolling = ({
     if (!node || isLoading || !hasMore) return;
 
     observer.current?.disconnect();
-    observer.current = new IntersectionObserver(([ element ]) => {
+    observer.current = new IntersectionObserver(([element]) => {
       if (element.isIntersecting) {
         setPage((i) => i + 1);
       }
     });
     observer.current.observe(node);
-
-  }, [ isLoading, hasMore, setPage ]);
+  }, [isLoading, hasMore, setPage]);
 
   return ref;
-}
+};

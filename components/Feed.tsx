@@ -14,11 +14,11 @@ export type FeedProps = {
 export const Feed = ({
   title,
 }: FeedProps) => {
-  const [ hasMore, setHasMore ] = useState(true);
-  const [ isLoading, setIsLoading ] = useState(false);
-  const [ page, setPage ] = useState(1);
-  const [ size ] = useState(10);
-  const [ posts, setPosts ] = useState<PostType[]>([]);
+  const [hasMore, setHasMore] = useState(true);
+  const [isLoading, setIsLoading] = useState(false);
+  const [page, setPage] = useState(1);
+  const [size] = useState(10);
+  const [posts, setPosts] = useState<PostType[]>([]);
 
   useEffect(() => {
     setIsLoading(true);
@@ -29,12 +29,11 @@ export const Feed = ({
       .then((newPosts) => {
         if (!newPosts || !newPosts.length) setHasMore(false);
         else {
-          setPosts((posts) => [ ...posts, ...newPosts ]);
+          setPosts((posts) => [...posts, ...newPosts]);
           setIsLoading(false);
         }
       });
-
-  }, [ page, size ]);
+  }, [page, size]);
 
   const ref = useInfinateScrolling({
     isLoading,
@@ -61,4 +60,4 @@ export const Feed = ({
       }
     </div>
   );
-}
+};

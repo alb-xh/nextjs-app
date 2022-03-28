@@ -10,6 +10,6 @@ export const Image = ({
   ...image
 }: ImageProps) => (
   <div className={`image ${className}`}>
-    <NextImage {...image }/>
+    <NextImage {...image} />
   </div>
 );

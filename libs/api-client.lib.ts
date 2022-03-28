@@ -6,22 +6,34 @@ import {
 } from '../types';
 
 export class ApiClient {
-  constructor (public readonly baseUrl = '') {
+  constructor(public readonly baseUrl = '') {
     this.baseUrl = baseUrl;
   }
 
-  private paginationConfig ({ page, size }: Pagination)
-    : AxiosRequestConfig<any> {
+  private static paginationParams(pagination: Pagination) {
+    const { size, page } = pagination;
+
     return {
-      params: {
-        limit: size,
-        offset: (page - 1) * size,
-      },
+      limit: size,
+      offset: (page - 1) * size,
     };
   }
 
-  async getPosts (pagination: Pagination): Promise<Post[]> {
-    const { data: posts } = await axios('/api/posts', this.paginationConfig(pagination));
-    return posts as Post[];
+  private async request<T>(
+    endpoint: string,
+    config: AxiosRequestConfig,
+  ): Promise<T> {
+    const { data } = await axios(this.baseUrl + endpoint, config);
+    return data as T;
   }
-};
+
+  async getPosts(pagination: Pagination): Promise<Post[]> {
+    const posts = await this.request<Post[]>('/api/posts', {
+      params: {
+        ...ApiClient.paginationParams(pagination),
+      },
+    });
+
+    return posts;
+  }
+}

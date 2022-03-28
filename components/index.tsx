@@ -1,4 +1,4 @@
-export * from './Meta'
+export * from './Meta';
 export * from './Image';
 export * from './Nav';
 export * from './Post';

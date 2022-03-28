@@ -6,7 +6,7 @@ import {
 } from '../types';
 
 export class Generator {
-  static number (min = 0, max = Infinity) {
+  static number(min = 0, max = Infinity) {
     return Math.round(Math.random() * (max - min) + min);
   }
 
@@ -30,4 +30,4 @@ export class Generator {
       image: Generator.image(),
     };
   }
-};
+}

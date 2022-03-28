@@ -1,5 +1,3 @@
-import type { ReactNode } from 'react';
-
 import { Image } from './Image';
 import { Meta, MetaProps } from './Meta';
 import { Nav, NavProps } from './Nav';
@@ -39,10 +37,12 @@ export const Layout = ({
     </main>
     <footer>
       {
-        email &&
+        email
+        && (
         <MailTo email={email}>
           Contact me
         </MailTo>
+        )
       }
     </footer>
   </>
