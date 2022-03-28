@@ -18,7 +18,7 @@ const generatePosts = ({
   offset: number,
 }): Post[] => {
   const allPosts = [ ...Array(TOTAL_POSTS) ];
-  const customLimit = limit > MAX_LIMIT ? MAX_LIMIT : limit
+  const customLimit = limit > MAX_LIMIT ? MAX_LIMIT : limit;
 
   return allPosts.slice(offset, offset + customLimit)
     .map(() => {
@@ -52,7 +52,7 @@ const getPostsHanler = (
       res.status(200).json(posts);
       break
     default:
-      res.setHeader('Allow', ['GET', 'PUT'])
+      res.setHeader('Allow', ['GET' ])
       res.status(405).end(`Method ${method} Not Allowed`)
   }
 };
