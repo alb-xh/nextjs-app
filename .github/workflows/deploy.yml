@@ -74,6 +74,7 @@ jobs:
           sudo docker run
             -d
             --name ${{ env.DOCKER_CONTAINER_NAME }}
-            -v /srv/www/my-next-app:/home/app
+            --net my-feed-net
+            -v /srv/www/next-app:/home/app
             -p ${{ env.SERVER_PORT }}:${{ env.SERVER_PORT }}
             ${{ env.DOCKER_REGISTRY }}/${{ env.DOCKER_IMAGE_NAME }}:${{ env.DOCKER_IMAGE_TAG }}
